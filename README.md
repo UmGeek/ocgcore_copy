@@ -29,5 +29,6 @@ O cabeçalho define as funções exportadas pelo núcleo (`ocgapi`) para interag
 
 ---
 
-##  Estrutura do Repositório
+##  Projeto original
+[Fluorohydride - ygopro-core](https://github.com/Fluorohydride/ygopro-core)
 
