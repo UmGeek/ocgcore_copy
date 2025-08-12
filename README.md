@@ -1,38 +1,33 @@
-# 🔹 Backup da DLL - OCG API
+# ​ Backup da DLL – OCG API (ygopro-core Interface)
 
-Este repositório contém um **backup de segurança** de uma DLL e seu respectivo cabeçalho (`ocgapi.h`), utilizados para interagir com a API OCG (provavelmente relacionada a um motor de duelos, como YGOPro/EDOPro ou derivados).
-
-> ⚠️ **Aviso:** Este projeto não contém código-fonte completo ou implementação interna da DLL, apenas o cabeçalho público para referência.  
-> O objetivo é **backup e preservação**, não distribuição comercial ou uso não autorizado.
+Este repositório contém um **backup de segurança** da DLL (biblioteca dinâmica) e seu cabeçalho exposto (`ocgapi.h`), ideal para mantenimento ou referência futura. A API se relaciona ao core de YGOPro (ygopro-core), a engine script de duelos de Yu-Gi-Oh! usada por diversos simuladores automatizados.
 
 ---
 
-## 📄 Sobre o Arquivo `interface.h`
+##  Projeto original
 
-O arquivo de cabeçalho define a interface de comunicação entre a aplicação e a DLL, incluindo:
-
-- **Macros de exportação/importação** para compatibilidade com Windows e Linux.
-- **Definições de tipos** para funções de leitura de scripts, leitura de dados de cartas e tratamento de mensagens.
-- **Funções da API** para:
-  - Criar e gerenciar duelos.
-  - Consultar informações de cartas e do campo.
-  - Enviar respostas e processar eventos.
-  - Gerenciar scripts de jogo.
+O repositório original do qual esse backup deriva é o **Fluorohydride/ygopro-core**, que implementa a lógica central e o processador de scripts Lua para YGOPro. Ele pode ser utilizado como biblioteca externa para servidores ou aplicativos que desejam simular duelos usando essa engine. :contentReference[oaicite:0]{index=0}
 
 ---
 
-## 🔧 Funções Principais
+##  Sobre o `interface.h`
 
-Algumas funções expostas pela API incluem:
+O cabeçalho define as funções exportadas pelo núcleo (`ocgapi`) para interagir com o engine interno:
 
-- `create_duel()` e `create_duel_v2()` — Inicializam um duelo.
-- `start_duel()` e `end_duel()` — Controlam o ciclo de vida do duelo.
-- `set_script_reader()` — Define a função de leitura de scripts.
-- `query_card()` — Consulta informações detalhadas de uma carta.
-- `process()` — Processa o estado atual do duelo.
-- `handle_message()` — Trata mensagens enviadas pela engine.
+- **Configuração de callbacks**:
+  - `set_script_reader()`
+  - `set_card_reader()`
+  - `set_message_handler()`
+
+- **Criação e controle de duelo**:
+  - `create_duel()`, `create_duel_v2()`, `start_duel()`, `end_duel()`
+
+- **Controle dos jogadores e componentes do duelo**:
+  - `set_player_info()`, `process()`, `new_card()`, `query_card()`, `get_message()`, entre outras.
+
+- Muitas dessas funções e callbacks são essenciais para integrar a engine em um sistema externo. :contentReference[oaicite:1]{index=1}
 
 ---
 
-## 📦 Estrutura do Repositório
+##  Estrutura do Repositório
 
