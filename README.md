@@ -1,6 +1,6 @@
 # 🔹 Backup da DLL - OCG API
 
-Este repositório contém um **backup de segurança** de uma DLL e seu respectivo cabeçalho (`interface.h`), utilizados para interagir com a API OCG (provavelmente relacionada a um motor de duelos, como YGOPro/EDOPro ou derivados).
+Este repositório contém um **backup de segurança** de uma DLL e seu respectivo cabeçalho (`ocgapi.h`), utilizados para interagir com a API OCG (provavelmente relacionada a um motor de duelos, como YGOPro/EDOPro ou derivados).
 
 > ⚠️ **Aviso:** Este projeto não contém código-fonte completo ou implementação interna da DLL, apenas o cabeçalho público para referência.  
 > O objetivo é **backup e preservação**, não distribuição comercial ou uso não autorizado.
